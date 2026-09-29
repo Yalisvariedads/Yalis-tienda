@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yális | Perfumería, Jeans y Ropa</title>
+<style>
+:root{
+  --cream:#fbf7ef; --gold:#b99655; --dark:#29241e; --soft:#eee5d6; --white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--dark)}
+header{position:sticky;top:0;z-index:10;background:rgba(251,247,239,.96);border-bottom:1px solid #e7dccb}
+.nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,serif;font-size:30px;font-weight:bold;letter-spacing:1px;color:var(--gold)}
+nav a{margin-left:18px;text-decoration:none;color:var(--dark);font-size:14px}
+.hero{max-width:1100px;margin:auto;padding:58px 20px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:var(--gold);font-weight:bold}
+h1{font-family:Georgia,serif;font-size:52px;line-height:1.05;margin:12px 0}
+.hero p{font-size:18px;line-height:1.6;color:#655d53;max-width:560px}
+.btn{display:inline-block;padding:14px 22px;border-radius:30px;background:var(--dark);color:white;text-decoration:none;font-weight:bold;margin-top:10px}
+.btn.gold{background:var(--gold)}
+.hero-card{min-height:340px;border-radius:28px;background:linear-gradient(145deg,#efe4d1,#fffaf1);display:flex;align-items:center;justify-content:center;box-shadow:0 15px 45px #9b865522;border:1px solid #eadfce}
+.hero-card div{text-align:center}
+.hero-card .mark{font-family:Georgia,serif;font-size:76px;color:var(--gold)}
+.section{max-width:1100px;margin:auto;padding:35px 20px 70px}
+.section h2{font-family:Georgia,serif;font-size:34px;margin:0 0 8px}
+.sub{color:#756d62;margin:0 0 24px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.tab{border:1px solid #d8c9b2;background:transparent;border-radius:22px;padding:10px 16px;cursor:pointer;color:var(--dark)}
+.tab.active{background:var(--dark);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;border-radius:20px;overflow:hidden;border:1px solid #eadfce;box-shadow:0 8px 25px #806c4b12}
+.photo{height:230px;background:linear-gradient(135deg,#eee5d6,#fff);display:flex;align-items:center;justify-content:center;color:#9b8c76;font-family:Georgia,serif;font-size:22px}
+.info{padding:17px}.info h3{margin:0 0 7px;font-family:Georgia,serif;font-size:20px}
+.info p{margin:0 0 13px;color:#746b60;font-size:14px;line-height:1.45}
+.price{font-weight:bold;font-size:18px;margin-bottom:13px}
+.buy{display:block;text-align:center;padding:11px;border-radius:24px;background:#25a45a;color:white;text-decoration:none;font-weight:bold}
+.banner{margin-top:35px;background:var(--dark);color:white;border-radius:25px;padding:30px;text-align:center}
+.banner h2{margin-bottom:8px}
+.banner p{color:#e8ded0}
+footer{background:#211d18;color:#eee;padding:35px 20px;text-align:center}
+footer .logo{margin-bottom:8px}
+footer p{margin:7px;color:#cfc4b5}
+@media(max-width:750px){
+ .hero{grid-template-columns:1fr;padding-top:38px}
+ h1{font-size:40px}
+ .hero-card{min-height:230px}
+ .grid{grid-template-columns:1fr 1fr}
+ nav a{display:none}
+}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.section{padding-bottom:45px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <div class="logo">Yális</div>
+  <nav><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div>
+  <div class="kicker">Tu tienda online</div>
+  <h1>Lo mejor en perfumería, jeans y ropa.</h1>
+  <p>Encuentra productos seleccionados para realzar tu estilo. Compra fácil y recibe atención personalizada por WhatsApp.</p>
+  <a class="btn gold" href="https://wa.me/573202059447" target="_blank">Comprar por WhatsApp</a>
+ </div>
+ <div class="hero-card">
+   <div><div class="mark">Y</div><strong>ELEGANCIA · ESTILO · CONFIANZA</strong></div>
+ </div>
+</section>
+
+<section class="section" id="catalogo">
+ <h2>Catálogo</h2>
+ <p class="sub">Elige una categoría y descubre nuestros productos.</p>
+ <div class="tabs">
+  <button class="tab active" onclick="showCat('todos',this)">Todos</button>
+  <button class="tab" onclick="showCat('perfumes',this)">Perfumería</button>
+  <button class="tab" onclick="showCat('jeans',this)">Jeans</button>
+  <button class="tab" onclick="showCat('ropa',this)">Ropa</button>
+ </div>
+ <div class="grid" id="products">
+   <article class="card" data-cat="perfumes">
+    <div class="photo">Perfume</div><div class="info"><h3>Perfume 1.1</h3><p>Una opción especial para complementar tu estilo.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Perfume%201.1" target="_blank">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="card" data-cat="perfumes">
+    <div class="photo">Khamra</div><div class="info"><h3>Khamra</h3><p>Consulta disponibilidad y presentación.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20informaci%C3%B3n%20sobre%20Khamra" target="_blank">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="card" data-cat="jeans">
+    <div class="photo">Jeans</div><div class="info"><h3>Jeans realza glúteos</h3><p>Tela stretch y diseños pensados para favorecer tu silueta.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20ver%20los%20jeans%20disponibles" target="_blank">Ver jeans</a></div>
+   </article>
+   <article class="card" data-cat="jeans">
+    <div class="photo">Bota recta</div><div class="info"><h3>Jean bota recta</h3><p>Consulta tallas, colores y disponibilidad.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20ver%20los%20jeans%20bota%20recta" target="_blank">Consultar</a></div>
+   </article>
+   <article class="card" data-cat="ropa">
+    <div class="photo">Ropa</div><div class="info"><h3>Ropa seleccionada</h3><p>Nuevos modelos próximamente en nuestro catálogo.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20ver%20la%20ropa%20disponible" target="_blank">Consultar</a></div>
+   </article>
+   <article class="card" data-cat="perfumes">
+    <div class="photo">Caballero</div><div class="info"><h3>Perfumería para caballero</h3><p>Consulta nuestras fragancias disponibles.</p><div class="price">Consultar precio</div><a class="buy" href="https://wa.me/573202059447?text=Hola%20Y%C3%A1lis%2C%20quiero%20ver%20las%20fragancias%20para%20caballero" target="_blank">Ver fragancias</a></div>
+   </article>
+ </div>
+ <div class="banner" id="nosotros">
+   <h2>Compra con Yális</h2>
+   <p>Atención personalizada · Envíos a nivel nacional · Compra directa por WhatsApp</p>
+   <a class="btn gold" href="https://wa.me/573202059447" target="_blank">Hablar con Yális</a>
+ </div>
+</section>
+</main>
+
+<footer id="contacto">
+ <div class="logo">Yális</div>
+ <p>Perfumería · Jeans · Ropa</p>
+ <p>WhatsApp: 320 205 9447</p>
+ <p>© 2026 Yális</p>
+</footer>
+
+<script>
+function showCat(cat,btn){
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.card').forEach(card=>{
+   card.style.display=(cat==='todos'||card.dataset.cat===cat)?'block':'none';
+ });
+}
+</script>
+</body>
+</html>
